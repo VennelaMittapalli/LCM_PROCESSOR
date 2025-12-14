@@ -1,5 +1,5 @@
 module lcm_tb();
-reg clk = 1'b1;
+reg clk=1'b1;
 reg rst,go_i;
 reg [7:0]x_i;
 reg [7:0]y_i;
@@ -14,9 +14,13 @@ rst=1'b1;
 #10;
 rst=1'b0;
 #10;
-go_i = 1'b1;
-x_i=1; y_i=2;#200;
-x_i=2;y_i=4;#200;
+go_i=1'b1;
+x_i=1; y_i=2;#500;
+rst=1'b1;
+#10;
+rst=1'b0;
+#10;
+x_i=4;y_i=9;#500;
 #10 $finish;
 end
 endmodule
