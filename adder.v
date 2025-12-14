@@ -1,4 +1,4 @@
-module adder(input rst, input [1:0]cmd, input [7:0]x,y, output reg [7:0]xout,yout);
+module adder(input rst, input [1:0]cmd, input [7:0]x,y,input [7:0]xreg1,yreg1, output reg [7:0]xout,yout);
 always @(*) begin
 if(rst || cmd == 2'b00) begin
 xout = 8'b00000000;
@@ -6,10 +6,10 @@ yout = 8'b00000000;
 end
 else if(cmd == 2'b10) begin
 xout = x;
-yout = (y+y);
+yout =(y+yreg1);
 end
 else if(cmd == 2'b01) begin
-xout =(x+x);
+xout =(x+xreg1);
 yout = y;
 end
 else begin
