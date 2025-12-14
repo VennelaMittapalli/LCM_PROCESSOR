@@ -1,4 +1,7 @@
 module lcm_top(input rst, clk, go_i, input [7:0]x_i,y_i, output reg [7:0]d_o);
+wire [7:0]xreg1,yreg1;
+assign xreg1=x_i;
+assign yreg1=y_i;
 wire xld,yld,xsel,ysel,enable;
 wire [1:0]comparison;
 wire [7:0]result;
@@ -9,7 +12,7 @@ multiplexer y(rst,ysel,y_i,ysub,ymux);
 register reg1(rst,clk,xld,xmux,xreg);
 register reg2(rst,clk,yld,ymux,yreg);
 comparator comp(rst,xreg,yreg,comparison);
-adder add(rst,comparison,xreg,yreg,xsub,ysub);
+adder add(rst,comparison,xreg,yreg,xreg1,yreg1,xsub,ysub);
 register outp(rst,clk,enable,xsub,result);
 always @(posedge clk) d_o <= result;
 endmodule
