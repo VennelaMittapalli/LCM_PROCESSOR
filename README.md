@@ -1,10 +1,10 @@
 ALGORITHM:
 
-x,y inputs ; z output
+xin,yin inputs ; z output
 
-if(x>y) x=x;y=y+y;
+if(x>y) x=x;y=y+yin;
 
-else if(x<y) x=(x+x);y=y;
+else if(x<y) x=(x+xin);y=y;
 
 Above process needs to be repeated till 
 x==y--> RESULT = X OR Y
