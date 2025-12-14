@@ -1,4 +1,5 @@
-ALGORITHM:/n
+ALGORITHM:
+
 x,y inputs ; z output
 if(x>y) x=x;y=y+y;
 else if(x<y) x=(x+x);y=y;
