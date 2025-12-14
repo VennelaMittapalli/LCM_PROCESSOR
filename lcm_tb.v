@@ -1,8 +1,8 @@
 module lcm_tb();
 reg clk = 1'b1;
 reg rst,go_i;
-reg [3:0]x_i;
-reg [3:0]y_i;
+reg [7:0]x_i;
+reg [7:0]y_i;
 wire [7:0]d_o;
 
 always #5 clk=~clk;
